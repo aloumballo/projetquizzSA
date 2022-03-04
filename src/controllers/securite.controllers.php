@@ -44,7 +44,7 @@ function connexion($login,$password)
     if(count($errors)==0) {
         Valid_Email ('login',$login,$errors);
     }
-   Champ_Obligatoire('password',$login,$errors);
+   Champ_Obligatoire('password',$password,$errors,"Password est obligatoire");
    if(count($errors)==0) {
     // appel d'une function model
     $user=find_user__password($login,$password);
@@ -56,8 +56,8 @@ function connexion($login,$password)
         exit(); 
     }else{
         // utilisateur n'existe pas
-        $errors['connexion']="login est obligatoire";
-        $errors['password']="password est obligatoire";
+        $errors['connexion']="login et Password obligatoire";
+        // $errors['password']="password est obligatoire";
 
         $_SESSION[KEY_ERRORS]=$errors;
         header("location:".WEB_ROOT."?controller=securite&action=connexion");
@@ -66,7 +66,7 @@ function connexion($login,$password)
     
 }else {
     $_SESSION[KEY_ERRORS]=$errors;
-    header("location".WEB_ROOT);
+    header("location:".WEB_ROOT."?controller=securite&action=connexion");
     exit();
 }
     

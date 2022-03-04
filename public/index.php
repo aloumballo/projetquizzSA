@@ -1,9 +1,9 @@
 <!-- le Front Control -->
 <?php
-// echo "<pre>";
-// var_dump($_SERVER);
+//  echo "<pre>";
+//  var_dump($_SERVER);
 // echo "</pre>";
-//  var_dump(dirname(dirname(__FILE__)));
+ /* var_dump(dirname(dirname(__FILE__))); */
 if (session_status()==PHP_SESSION_NONE) {
     session_start();
 }

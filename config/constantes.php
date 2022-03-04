@@ -17,6 +17,6 @@ define("PATH_VIEWS",ROOT."views".DIRECTORY_SEPARATOR);
 // chemin pour les fichiers json
 define("PATH_DB",ROOT."data".DIRECTORY_SEPARATOR."db.json");
 // chemin pour l'envoi des requetes Get ou Post
-define("WEB_ROOT","http://localhost/quizz/public/index.php");
+define("WEB_ROOT","http://localhost:8080/pmba/public/index.php");
 define("KEY_ERRORS","errors");
 define("KEY_USER_CONNECT","user-connect");
