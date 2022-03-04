@@ -13,7 +13,11 @@ require_once(PATH_VIEWS."include".DIRECTORY_SEPARATOR."header.inc.html.php");
 <div id="conteneur"> 
     <div class="entete">
         <h1>Creer et Parametrer vos Quizz</h1>
-        <button>Deconnexion</button>
+        <button>
+          <a href="<?=WEB_ROOT."?controller=securite&action=deconnexion"?>">
+          Deconnexion
+        </a>
+        </button>
   </div>
     <div class="contjeu">
         <div class="listetof">

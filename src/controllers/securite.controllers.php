@@ -26,7 +26,10 @@ if ($_SERVER["REQUEST_METHOD"]=="GET") {
             
 
             // echo "charger la page de connexion";
+        }elseif ($_GET["action"]=="deconnexion") {
+            logout ();
         }
+
     }
     else {
        
@@ -72,3 +75,9 @@ function connexion($login,$password)
     
 }
 
+function logout(){
+    session_destroy();
+    header("location:".WEB_ROOT);
+    exit();
+    
+}
