@@ -9,13 +9,21 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
 
 if ($_SERVER["REQUEST_METHOD"]=="GET") {
     if (isset($_REQUEST["action"])) {
-        if(is_connect() == null) { 
+        /* if(is_connect() == null) { 
             header("location:".WEB_ROOT);
             exit();
-        }
-        if ($_REQUEST["action"]=="accueil") {    
-            require_once(PATH_VIEWS."user".DIRECTORY_SEPARATOR."accueil.html.php");
-        }
+        } */
+
+
+        if ($_REQUEST["action"]=="accueil") {   
+            if(is_admin()){
+                listeJoueur();   //par defaut affiche la page liste joueur
+            }elseif(is_joueur()){
+                afficheJeux();
+            }
+        } 
+/*             require_once(PATH_VIEWS."user".DIRECTORY_SEPARATOR."accueil.html.php");
+ */       
         if($_REQUEST["action"]=='liste.question'){
             listequestion();
         }
@@ -28,8 +36,13 @@ if ($_SERVER["REQUEST_METHOD"]=="GET") {
         if($_REQUEST["action"]=='creer.Question'){
             creeQuestion();
         }
-    }  
-}
+        if($_REQUEST["action"]=='inscription.joueur'){  
+            require_once(PATH_VIEWS.'user'.DIRECTORY_SEPARATOR.'inscription.html.php');
+        }
+        
+    }
+}  
+
 
 function   listequestion(){
       ob_start();
@@ -55,7 +68,7 @@ function creeradmin(){
 
 } */
 function  listeJoueur(){
-    ob_start();
+    ob_start();  //role de tempo beuffor stock liste.joueur.html.php
     $joueurs = afficheRole('Role_JOUEUR');
     require_once(PATH_VIEWS.'user'.DIRECTORY_SEPARATOR."liste.joueur.html.php");
     $affiche=ob_get_clean();
@@ -67,5 +80,14 @@ function  creeQuestion (){
     require_once(PATH_VIEWS.'user'.DIRECTORY_SEPARATOR."creation.question.html.php");
     $affiche=ob_get_clean();
     require_once(PATH_VIEWS.'user'.DIRECTORY_SEPARATOR."accueil.html.php");
+
+}
+//fonction pour affichier par defaut la page eux.html.php
+function afficheJeux(){ 
+    ob_start();
+    require_once(PATH_VIEWS.'user'.DIRECTORY_SEPARATOR."jeux.html.php");
+    $affiche=ob_get_clean();
+    require_once(PATH_VIEWS.'user'.DIRECTORY_SEPARATOR."accueil.html.php");
+
 
 }

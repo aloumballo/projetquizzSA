@@ -1,4 +1,3 @@
-mballo
 <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,15 +7,6 @@ mballo
     <title>Document</title>
 </head>
 <body> -->
-    <div class="headers">
-
-    </div>
-    <div class="coprss">
-
-    </div>
-    <div class="footers">
-
-    </div>
-    
+    <h1>BIENVENUE AU JEUX</h1>
 <!-- </body>
 </html> -->

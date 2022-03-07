@@ -93,9 +93,49 @@
 
 
     ],
-    "questions":{
+    "questions":[
+          {
+              "Questions":"Les Langage Web",
+              "choix":[
+                  "HTML","R","java"
+              ],
+              "reponse":"html"
+
+          },
+          {
+
+            "Questions":"D'ou vient le corona?",
+            "choix":[
+                "Italie","Chine"
+            ],
+            "reponse":"chine"
+          },
+          {
+            "Questions":"Quel est la capital du senegal?",
+            "choix":[
+                "Dakar","Thies"
+            ],
+            "reponse":"Dakar"
+          },
+          {
+            "Questions":"Quels est la prmiere ecole de codage gratuite du senegal",
+            "choix":[
+                "Simplon","Orange Digital Center"
+            ],
+            "reponse":"Simplon"
+          },
+          {
+            "Questions":"Qui est le pluis vilain de orange digital center",
+            "choix":[
+                "Traore","Ndiaye"
+            ],
+            "reponse":"Traore"
+          }
+
+
+    ]
+    
         
     }
 
 
-}

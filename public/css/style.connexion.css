@@ -37,12 +37,10 @@ h2{
    
      width: 39vw; 
     height: 60vh;
+    /* position: relative; */
     
     background-color: white;
     
-    
-
-   
 }
 
 .form-control{
@@ -54,8 +52,6 @@ h2{
     
     
 }
-
-
 
 
 .form-control.success input{
@@ -82,11 +78,14 @@ h2{
 input[type="password"]{
     width: 30vw;
     height: 8vh;
-    background-color: rgb(240,240,240);
+    background-color: rgb(240,240,240); 
+  
     font-size: 25px;
     border: none;
 
 }
+
+
 input[type="text"]{
     width: 30vw;
     height: 8vh;
@@ -142,3 +141,4 @@ input[id="connexion"]{
     background-color: rgb(81,191,208);
       padding: 3%;  
 }
+

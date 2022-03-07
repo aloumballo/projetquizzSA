@@ -6,11 +6,7 @@ if (isset($_SESSION[KEY_ERRORS])) {
 
 }
 ?>
-
-<div class="header"> 
-    <div class="logo"></div>
-    <div class="ff">Le plaisir de jouer</h1></div>
-</div>  
+ 
     
 <div class="container"> 
     <form class="form" action="<?=WEB_ROOT?>"id="form" method="post">
@@ -27,14 +23,14 @@ if (isset($_SESSION[KEY_ERRORS])) {
         <p style="color:red"> <?=$errors['connexion']; ?> </p>
         <?php endif?>
         <div class="form-control">
-            <input type="email" id="email" placeholder="Login" name="login">
+                <input type="email" id="email" placeholder="Login" name="login" >
+                
+                    <img src="<?=WEB_PUBLIC."img".DIRECTORY_SEPARATOR."ic-login.png" ?>" alt=""class="img">
+                    <?php if (isset($errors['login'])):?>
             
-                <img src="<?=WEB_PUBLIC."img".DIRECTORY_SEPARATOR."ic-login.png" ?>" alt="" width="5%" height="-1%">
-                <?php if (isset($errors['login'])):?>
-        
-        <p style="color:red"> <?=$errors['login']; ?> </p>
-        <?php endif?>
-            <small>Error message</small>
+            <p style="color:red"> <?=$errors['login']; ?> </p>
+            <?php endif?>
+                <small>Error message</small>
         </div>
         <div class="form-control">
             <input type="password" id="password" placeholder="Password" name="password">
@@ -50,7 +46,9 @@ if (isset($_SESSION[KEY_ERRORS])) {
         </div>
         <div class="connect">
             <input type="submit" value="Connexion" id="connexion">
-            <input type="submit" value="S'inscrire pour jouer" id="inscription">
+            <!-- <input type="submit" value="S'inscrire pour jouer" id="inscription"> -->
+            <!-- //liens pour s'inscrire -->
+            <button> <a href="<?= WEB_ROOT."?controller=user&action=inscription.joueur"?>">S'inscrire pour jouer</a> </button>
         </div>
     
         

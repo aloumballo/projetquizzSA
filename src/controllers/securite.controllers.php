@@ -14,8 +14,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
         }
         
     }
-    
-          
+             
 }
 if ($_SERVER["REQUEST_METHOD"]=="GET") {
     if (isset($_GET["action"])) {
@@ -73,6 +72,7 @@ function connexion($login,$password)
 
 function logout(){
     session_destroy();
+    unset($_SESSION[KEY_ERRORS]);
     header("location:".WEB_ROOT);
     exit();
     
