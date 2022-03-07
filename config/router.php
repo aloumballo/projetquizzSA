@@ -1,4 +1,5 @@
 <!-- Qui permet de charger les controllers -->
+<!--on verifie si la cle controller existe dans le request apres on test la clé si elle est egale a securite ... si elle est egale a user.. -->
 <?php
 if (isset($_REQUEST['controller'])) { 
     switch ($_REQUEST['controller']) {

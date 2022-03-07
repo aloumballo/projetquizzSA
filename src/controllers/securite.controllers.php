@@ -1,4 +1,4 @@
-<!-- gere les connexions et deconnexions -->
+<!-- gere les connexions et deconnexions && en premier verifie si la requete est get ou post-->
 <?php
 require_once(PATH_SRC."models".DIRECTORY_SEPARATOR."users.models.php");
 
@@ -15,9 +15,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST") {
         
     }
     
-        
-    
-    
+          
 }
 if ($_SERVER["REQUEST_METHOD"]=="GET") {
     if (isset($_GET["action"])) {
@@ -27,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"]=="GET") {
 
             // echo "charger la page de connexion";
         }elseif ($_GET["action"]=="deconnexion") {
-            logout ();
+            logout (); //detruit la session et me redirige sur la page de connexion
         }
 
     }
@@ -37,8 +35,7 @@ if ($_SERVER["REQUEST_METHOD"]=="GET") {
         require_once(PATH_VIEWS."securite".DIRECTORY_SEPARATOR."connexion.html.php");
         
     }
-
-    
+  
 }
 function connexion($login,$password)
 {
@@ -52,9 +49,8 @@ function connexion($login,$password)
     // appel d'une function model
     $user=find_user__password($login,$password);
     if (count($user)!=0) {
-       
         // utilisateur existe
-        $_SESSION[KEY_USER_CONNECT]=$user;  
+        $_SESSION[KEY_USER_CONNECT]=$user;
         header("location:".WEB_ROOT."?controller=user&action=accueil");
         exit(); 
     }else{

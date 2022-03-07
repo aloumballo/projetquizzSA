@@ -1,3 +1,6 @@
+<!-- c'est lui qui vas utiliser l'orm -->
+
+
 <?php
 function find_user__password($login,$password)
 {
